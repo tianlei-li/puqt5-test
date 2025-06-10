@@ -4,8 +4,7 @@ import os
 import socket
 import time
 import weakref
-
-import PyQt5.QtCore  # 导入整个 QtCore 模块
+import PyQt5.QtCore
 import pymysql
 import sip
 from PyQt5.QtCore import QDate
@@ -20,9 +19,8 @@ from PyQt5.QtWidgets import QHeaderView
 from PyQt5.QtWidgets import (QMainWindow, QApplication, QWidget, QVBoxLayout,
                              QHBoxLayout, QTableWidget, QTableWidgetItem, QPushButton,
                              QLabel, QLineEdit, QComboBox, QMessageBox, QAction, QGroupBox, QTextEdit)
-
 import history
-from db_connect import Database  # 假设已存在数据库连接类
+from db_connect import Database
 from network import SocketClient
 
 
@@ -2987,19 +2985,19 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "紧急错误",
                                  f"职位表格重建失败，请重启应用\n错误详情: {str(e)}")
             return False
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    app.setFont(QFont("Microsoft YaHei", 9))
-
-    # 显示登录窗口
-    # login_dialog = LoginDialog()
-    # if login_dialog.exec_() == QDialog.Accepted:
-        # 登录成功后显示主窗口
-    main_window = MainWindow()
-    main_window.show()
-    sys.exit(app.exec_())
-    # else:
-    #     sys.exit(0)
+#调试用
+# if __name__ == "__main__":
+#     import sys
+#
+#     app = QApplication(sys.argv)
+#     app.setFont(QFont("Microsoft YaHei", 9))
+#
+#     # 显示登录窗口
+#     # login_dialog = LoginDialog()
+#     # if login_dialog.exec_() == QDialog.Accepted:
+#         # 登录成功后显示主窗口
+#     main_window = MainWindow()
+#     main_window.show()
+#     sys.exit(app.exec_())
+#     # else:
+#     #     sys.exit(0)
